@@ -45,6 +45,5 @@ export function event(
   if (userId !== undefined) {
     eventOptions.user_id = userId;
   }
-
   window.gtag("event", action, eventOptions);
 }
