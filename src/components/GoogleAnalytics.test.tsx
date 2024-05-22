@@ -4,22 +4,33 @@ import { GoogleAnalytics } from "./GoogleAnalytics";
 import { Router } from "next/router";
 import * as hooks from "../hooks";
 
+// Mocking 'next/router' module for Jest testing
 jest.mock("next/router", () => {
   return {
+    // Using 'jest.requireActual' makes sure that the actual 'next/router' module is returned
     ...jest.requireActual("next/router"),
+
+    // Overriding 'Router' object with a mocked version
     Router: {
       events: {
+        // Mockito of the 'on' method which can be used in tests to verify if events are being registered properly
         on: jest.fn(),
+
+        // Mockito of the 'off' method. You can also use 'jest.fn()' here if you want to check that events are being removed properly
         off: () => null,
       },
     },
   };
 });
 
+// Mocking 'next/script' module for Jest testing
 jest.mock(
   "next/script",
-  () =>
+  () => 
+    // Function component named 'MockScript' which is used as the mock of 'next/script'
     function MockScript(props: React.HTMLAttributes<HTMLDivElement>) {
+      
+      // It simply renders a <div> element with all the given props
       return <div {...props} />;
     }
 );
