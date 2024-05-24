@@ -35,7 +35,10 @@ jest.mock(
     }
 );
 
+// We run this function after each test
 afterEach(() => {
+  // Clear all the mocks after each test to ensure that 
+  // old mock data will not interfere with new tests
   jest.clearAllMocks();
 });
 
