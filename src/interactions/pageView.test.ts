@@ -1,19 +1,19 @@
 import { pageView } from "./pageView";
 
-const OLD_ENV = process.env;
-const mockGaMeasurementId = "mock";
+const OLD_ENV = process.env; // Store the original environment variables.
+const mockGaMeasurementId = "mock"; // Define a mock Google Analytics Measurement ID.
 
 beforeEach(() => {
-  console.warn = jest.fn();
-  window.gtag = jest.fn();
-  jest.resetModules();
-  jest.clearAllMocks();
-  jest.resetAllMocks();
-  process.env = { ...OLD_ENV };
+  console.warn = jest.fn(); // Mock console.warn to prevent actual warnings during tests.
+  window.gtag = jest.fn(); // Mock the global gtag function used for Google Analytics.
+  jest.resetModules(); // Clear the module registry to ensure a fresh state.
+  jest.clearAllMocks(); // Clear any mocked calls, instances, and results.
+  jest.resetAllMocks(); // Reset all mocks to their initial state.
+  process.env = { ...OLD_ENV }; // Reset process.env to the original environment variables.
 });
 
 afterAll(() => {
-  process.env = OLD_ENV;
+  process.env = OLD_ENV; // Restore the original environment variables after all tests.
 });
 
 describe("pageView", () => {
