@@ -1,18 +1,45 @@
 {
   "compilerOptions": {
+    // Specify ECMAScript target version: ES6
     "target": "es6",
+    
+    // Specify module code generation: commonjs
     "module": "commonjs",
+    
+    // Generates corresponding '.d.ts' file
     "declaration": true,
+    
+    // Generates source map files
     "sourceMap": true,
+    
+    // Redirect output structure to the directory: './dist'
     "outDir": "./dist",
+    
+    // Do not emit comments to output
     "removeComments": true,
+    
+    // Import emit helpers from 'tslib'
     "importHelpers": true,
+    
+    // Enable all strict type-checking options
     "strict": true,
+    
+    // Enable esModuleInterop for compatibility with CommonJS and ES Modules
     "esModuleInterop": true,
+    
+    // Skip type checking of declaration files
     "skipLibCheck": true,
+    
+    // Ensure consistent casing in file names
     "forceConsistentCasingInFileNames": true,
+    
+    // Support JSX in .tsx files with React
     "jsx": "react"
   },
+  
+  // Include all TypeScript files in the 'src' directory and its subdirectories
   "include": ["./src/**/*.ts"],
+  
+  // Exclude all test files in the 'src' directory and its subdirectories
   "exclude": ["./src/**/*.test.ts"]
 }
