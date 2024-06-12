@@ -46,18 +46,14 @@ export function GoogleAnalytics({
     disabled: !trackPageViews, // Disable tracking if not specified
   });
 
-  // Return null if GA Measurement ID is not provided
   if (!_gaMeasurementId) {
     return null;
   }
 
-  // Return script elements for Google Analytics
   return (
     <>
-      {/* Load Google Tag Manager script */}
       <Script src={`${gtagUrl}?id=${_gaMeasurementId}`} strategy={strategy} />
       
-      {/* Inline script to configure Google Analytics */}
       <Script id="nextjs-google-analytics" nonce={nonce}>
         {`
             window.dataLayer = window.dataLayer || [];
