@@ -43,7 +43,7 @@
     "semantic-release": "^24.0.0",
     "ts-jest": "^29.2.5",
     "ts-lib": "^0.0.5",
-    "tsc-watch": "^6.0.0",
+    "tsc-watch": "^7.0.0",
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
